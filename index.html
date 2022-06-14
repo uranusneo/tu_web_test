@@ -1,0 +1,120 @@
+<html lang="ko-KR"><head>
+
+<style>
+    .section input[id*="slide"] {
+        display:none;
+      }
+    .section .slidewrap {
+        max-width:1200px;
+        margin:0 auto;
+        overflow:hidden;
+      }
+    .section .slidelist{
+        white-space:nowrap;
+        font-size:0;
+      }
+    .section .slidelist > li{
+        display:inline-block;
+        vertical-align:middle;
+        width:100%;
+        transition:all .5s;
+      }
+    .section .slidelist > li > a {
+        display:block;
+        position:relative;
+      }
+    .section .slidelist > li > a img {
+        width:100%
+      }
+    .section .slidelist label {
+        position:absolute;
+        z-index:10;
+        top:50%;
+        transform:translateY(-50%);
+        padding:50px;
+        cursor:pointer;
+      }
+    .section .slidelist .left {
+        left:30px;
+        background:url('https://cdn-icons-png.flaticon.com/512/157/157078.png') center center / 100% no-repeat;
+      }
+    .section .slidelist .right {
+        right:30px;
+        background:url('https://cdn-icons-png.flaticon.com/512/157/157103.png') center center / 100% no-repeat;
+      }
+      
+      
+    section[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+    section[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+    section[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+      
+      
+    section .slide-control [class*="control"] {display:none;}
+    section [id="slide01"]:checked ~ .slidewrap .control01 {display:block;}
+    section [id="slide02"]:checked ~ .slidewrap .control02 {display:block;}
+    section [id="slide03"]:checked ~ .slidewrap .control03 {display:block;}
+</style>
+
+    </head>
+
+    <body>
+
+
+<div class ="section">
+  <input type="radio" name="slide" id="slide01" checked>
+  <input type="radio" name="slide" id="slide02">
+  <input type="radio" name="slide" id="slide03">
+  
+  <div class="slidewrap">
+    <ul class="slidelist">
+      <li>
+        <a>
+          <label  for ="slide03" class="left"></label>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg/800px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg">
+          <label for ="slide02" class="right"></label>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a>
+          <label  for ="slide02" class="left"></label>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg">
+          <label for ="slide01" class="right"></label>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a>
+          <label  for ="slide01" class="left"></label>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vincent_Willem_van_Gogh_128.jpg/800px-Vincent_Willem_van_Gogh_128.jpg">
+          <label for ="slide03" class="right"></label>
+        </a>
+        </li>
+        </ul>
+    </div>
+
+      <div class="slide-control">
+        <div class="control01">
+          <label for ="slide03" class="left"></label>
+          <label for ="slide02" class="right"></label>
+        </div>
+        <div class="control02">
+          <label for ="slide01" class="left"></label>
+          <label for ="slide03" class="right"></label>
+        </div>
+        <div class="control03">
+          <label for ="slide02" class="left"></label>
+          <label for ="slide01" class="right"></label>
+        </div>
+    </div>
+      
+    </ul>
+  </div>
+  
+</div>
+
+
+</body>
+</html>
